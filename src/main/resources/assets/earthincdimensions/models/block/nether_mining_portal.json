@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "earthincdimensions:block/nether_dim_block"
+  }
+}

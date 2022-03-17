@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#NL",
+    "ODO",
+    "WN#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:dirt"
+    },
+    "N": {
+      "item": "minecraft:netherrack"
+    },
+    "L": {
+      "item": "minecraft:lava_bucket"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "earthincdimensions:mining_core",
+    "count": 2
+  }
+}

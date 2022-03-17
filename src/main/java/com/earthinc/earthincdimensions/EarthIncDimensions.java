@@ -1,9 +1,14 @@
 package com.earthinc.earthincdimensions;
 
+import com.earthinc.earthincdimensions.block.ModBlocks;
+import com.earthinc.earthincdimensions.item.ModItems;
+import com.earthinc.earthincdimensions.world.biome.ModBiomes;
+import com.earthinc.earthincdimensions.world.biome.ModConfiguredSurfaceBuilders;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -28,7 +33,11 @@ public class EarthIncDimensions
 
     public EarthIncDimensions() {
         // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
+        ModBiomes.register(eventBus);
         // Register the enqueueIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         // Register the processIMC method for modloading

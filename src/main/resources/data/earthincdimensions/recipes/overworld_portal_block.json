@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#D#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:dirt"
+    },
+    "D": {
+      "item": "earthincdimensions:mining_core"
+    }
+  },
+  "result": {
+    "item": "earthincdimensions:overworld_mining_portal",
+    "count": 1
+  }
+}

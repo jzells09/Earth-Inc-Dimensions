@@ -1,0 +1,12 @@
+{
+  "type": "earthincdimensions:overworld_mining",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": -1176493715,
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "earthincdimensions:overworld_mining"
+    }
+  }
+}
