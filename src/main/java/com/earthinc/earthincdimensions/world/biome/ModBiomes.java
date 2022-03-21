@@ -38,6 +38,7 @@ public class ModBiomes {
         DefaultBiomeFeatures.withCommonOverworldBlocks(biomegenerationsettings$builder);
         DefaultBiomeFeatures.withOverworldOres(biomegenerationsettings$builder);
         DefaultBiomeFeatures.withClayDisks(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.withEmeraldOre(biomegenerationsettings$builder);
         biomegenerationsettings$builder.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Features.ORE_DIRT);
         return (new Biome.Builder()).precipitation(Biome.RainType.NONE).category(Biome.Category.PLAINS).depth(depth).scale(scale)
                 .temperature(0.0F).downfall(0.9F).setEffects((new BiomeAmbience.Builder()).setWaterColor(4445678).setWaterFogColor(270131)

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#D#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:sand"
+    },
+    "D": {
+      "item": "earthincdimensions:mining_core"
+    }
+  },
+  "result": {
+    "item": "earthincdimensions:ocean_mining_portal",
+    "count": 1
+  }
+}
