@@ -1,6 +1,6 @@
 package com.earthinc.earthincdimensions.block.dimblocks;
 
-import com.earthinc.earthincdimensions.world.dimension.DimensionTeleporter;
+import com.earthinc.earthincdimensions.world.dimension.DimensionTeleporterNetherMining;
 import com.earthinc.earthincdimensions.world.dimension.ModDimensions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -28,12 +28,12 @@ public class NetherTeleportBlock extends Block {
                     if (worldIn.getDimensionKey() == ModDimensions.NetherMiningDim) {
                         ServerWorld overWorld = server.getWorld(World.OVERWORLD);
                         if (overWorld != null) {
-                            player.changeDimension(overWorld, new DimensionTeleporter(pos, false));
+                            player.changeDimension(overWorld, new DimensionTeleporterNetherMining(pos, false));
                         }
                     } else {
                         ServerWorld futureDim = server.getWorld(ModDimensions.NetherMiningDim);
                         if (futureDim != null) {
-                            player.changeDimension(futureDim, new DimensionTeleporter(pos, true));
+                            player.changeDimension(futureDim, new DimensionTeleporterNetherMining(pos, true));
                         }
                     }
                     return ActionResultType.SUCCESS;

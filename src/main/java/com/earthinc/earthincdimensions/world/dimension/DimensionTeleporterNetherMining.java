@@ -1,5 +1,8 @@
 package com.earthinc.earthincdimensions.world.dimension;
 
+import com.earthinc.earthincdimensions.block.ModBlocks;
+import com.earthinc.earthincdimensions.block.dimblocks.NetherTeleportBlock;
+import com.earthinc.earthincdimensions.block.dimblocks.OverworldTeleportBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluids;
@@ -9,11 +12,11 @@ import net.minecraftforge.common.util.ITeleporter;
 
 import java.util.function.Function;
 
-public class DimensionTeleporter implements ITeleporter {
+public class DimensionTeleporterNetherMining implements ITeleporter {
     public static BlockPos thisPos = BlockPos.ZERO;
     public static boolean insideDimension = true;
 
-    public DimensionTeleporter(BlockPos pos, boolean insideDim) {
+    public DimensionTeleporterNetherMining(BlockPos pos, boolean insideDim) {
         thisPos = pos;
         insideDimension = insideDim;
     }
@@ -41,6 +44,18 @@ public class DimensionTeleporter implements ITeleporter {
 
         entity.setPositionAndUpdate(destinationPos.getX(), destinationPos.getY(), destinationPos.getZ());
 
+        if (insideDimension) {
+            boolean doSetBlock = true;
+            for (BlockPos checkPos : BlockPos.getAllInBoxMutable(destinationPos.down(10).west(10), destinationPos.up(10).east(10))) {
+                if (destinationWorld.getBlockState(checkPos).getBlock() instanceof NetherTeleportBlock) {
+                    doSetBlock = false;
+                    break;
+                }
+            }
+            if (doSetBlock) {
+                destinationWorld.setBlockState(destinationPos, ModBlocks.NETHER_MINING_PORTAL.get().getDefaultState());
+            }
+        }
 
 
         return entity;

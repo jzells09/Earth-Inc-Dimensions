@@ -1,6 +1,6 @@
 package com.earthinc.earthincdimensions.block.dimblocks;
 
-import com.earthinc.earthincdimensions.world.dimension.DimensionTeleporter;
+import com.earthinc.earthincdimensions.world.dimension.DimensionTeleporterOverworldMining;
 import com.earthinc.earthincdimensions.world.dimension.ModDimensions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -28,12 +28,12 @@ public class OverworldTeleportBlock extends Block {
                     if (worldIn.getDimensionKey() == ModDimensions.OverworldMiningDim) {
                         ServerWorld overWorld = server.getWorld(World.OVERWORLD);
                         if (overWorld != null) {
-                            player.changeDimension(overWorld, new DimensionTeleporter(pos, false));
+                            player.changeDimension(overWorld, new DimensionTeleporterOverworldMining(pos, false));
                         }
                     } else {
                         ServerWorld futureDim = server.getWorld(ModDimensions.OverworldMiningDim);
                         if (futureDim != null) {
-                            player.changeDimension(futureDim, new DimensionTeleporter(pos, true));
+                            player.changeDimension(futureDim, new DimensionTeleporterOverworldMining(pos, true));
                         }
                     }
                     return ActionResultType.SUCCESS;
