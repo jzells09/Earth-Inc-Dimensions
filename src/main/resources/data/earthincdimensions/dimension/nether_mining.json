@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:overworld",
+  "type": "earthincdimensions:nether_mining",
   "generator": {
     "type": "minecraft:noise",
     "seed": 60632400,

@@ -50,11 +50,12 @@ public class ModBiomes {
     }
 
     private static Biome makeNetherMineBiome(final Supplier<ConfiguredSurfaceBuilder<?>> surfaceBuilder, float depth, float scale) {
-
+        MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 
 
         BiomeGenerationSettings.Builder biomegenerationsettings$builder =
                 (new BiomeGenerationSettings.Builder()).withSurfaceBuilder(surfaceBuilder);
+
         DefaultBiomeFeatures.withDebrisOre(biomegenerationsettings$builder);
         DefaultBiomeFeatures.withCommonNetherBlocks(biomegenerationsettings$builder);
         biomegenerationsettings$builder.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Features.ORE_QUARTZ_NETHER);
@@ -66,7 +67,7 @@ public class ModBiomes {
                         .withGrassColor(11141120)
                         .withSkyColor(11141120)
                         .build())
-                        .withGenerationSettings(biomegenerationsettings$builder.build()).build();
+                .withMobSpawnSettings(mobspawninfo$builder.build()).withGenerationSettings(biomegenerationsettings$builder.build()).build();
     }
 
 
