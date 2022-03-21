@@ -1,0 +1,12 @@
+{
+  "type": "earthincdimensions:ocean_mining",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": -1176493715,
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:lukewarm_ocean"
+    }
+  }
+}

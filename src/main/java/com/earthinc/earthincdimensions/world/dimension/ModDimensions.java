@@ -13,5 +13,8 @@ public class ModDimensions
 
     public  static RegistryKey<World> NetherMiningDim = RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
             new ResourceLocation(EarthIncDimensions.MOD_ID,"nether_mining"));
+
+    public  static RegistryKey<World> OceanMiningDim = RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
+            new ResourceLocation(EarthIncDimensions.MOD_ID,"ocean_mining"));
 }
 

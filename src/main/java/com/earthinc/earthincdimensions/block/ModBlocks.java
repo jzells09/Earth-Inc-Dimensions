@@ -2,6 +2,7 @@ package com.earthinc.earthincdimensions.block;
 
 import com.earthinc.earthincdimensions.EarthIncDimensions;
 import com.earthinc.earthincdimensions.block.dimblocks.NetherTeleportBlock;
+import com.earthinc.earthincdimensions.block.dimblocks.OceanTeleportBlock;
 import com.earthinc.earthincdimensions.block.dimblocks.OverworldTeleportBlock;
 import com.earthinc.earthincdimensions.item.ModItemGroup;
 import com.earthinc.earthincdimensions.item.ModItems;
@@ -29,6 +30,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> NETHER_MINING_PORTAL = registerBlock("nether_mining_portal",
             () -> new NetherTeleportBlock(AbstractBlock.Properties.create(Material.ROCK)
+                    .harvestLevel(2).setRequiresTool().harvestTool(ToolType.PICKAXE).hardnessAndResistance(5f)));
+
+    public static final RegistryObject<Block> OCEAN_MINING_PORTAL = registerBlock("ocean_mining_portal",
+            () -> new OceanTeleportBlock(AbstractBlock.Properties.create(Material.ROCK)
                     .harvestLevel(2).setRequiresTool().harvestTool(ToolType.PICKAXE).hardnessAndResistance(5f)));
 
 //end
